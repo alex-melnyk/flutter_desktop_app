@@ -16,12 +16,14 @@ class SidebarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Container(
       padding: const EdgeInsets.symmetric(
         vertical: 6,
       ),
       decoration: BoxDecoration(
-        color: selected ? Colors.white10 : null,
+        color: selected ? theme.colorScheme.onSurface.withOpacity(0.1) : null,
         borderRadius: BorderRadius.circular(5),
       ),
       child: Row(

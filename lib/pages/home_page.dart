@@ -29,41 +29,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 34,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 7,
-                    ),
-                    // height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.white10,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 5,
-                            right: 5,
-                          ),
-                          child: Icon(
-                            CupertinoIcons.search,
-                            color: Colors.white,
-                            size: 16,
-                          ),
-                        ),
-                        Text(
-                          'Search',
-                          style: TextStyle(
-                            fontFamily: 'Helvetica',
-                            fontSize: 13,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  SearchBox(),
                   SidebarSection(title: 'Apple Music'),
                   SidebarButton(
                     icon: Icon(
@@ -150,13 +116,17 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Container(
-            width: 1,
-            color: theme.dividerColor,
-          ),
           Expanded(
             child: Container(
-              color: theme.scaffoldBackgroundColor,
+              decoration: BoxDecoration(
+                color: theme.scaffoldBackgroundColor,
+                border: Border(
+                  left: BorderSide(
+                    width: 1.5,
+                    color: theme.primaryColorDark,
+                  ),
+                ),
+              ),
             ),
           ),
         ],
