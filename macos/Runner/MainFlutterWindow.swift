@@ -10,13 +10,15 @@ class MainFlutterWindow: NSWindow {
     RegisterGeneratedPlugins(registry: flutterViewController)
 
     // Hiding the window title bar
-    self.titleVisibility = NSWindow.TitleVisibility.hidden;
-    self.titlebarAppearsTransparent = true;
-    self.isMovableByWindowBackground = true;
+    self.titleVisibility = NSWindow.TitleVisibility.hidden
+    self.titlebarAppearsTransparent = true
+    self.isMovableByWindowBackground = true
+    // Add style mask to allow content in full window
+    self.styleMask.insert(.fullSizeContentView)
 
     // Adding a NSVisualEffectView to act as a translucent background
-    let contentView = contentViewController!.view;
-    let superView = contentView.superview!;
+    let contentView = contentViewController!.view
+    let superView = contentView.superview!
 
     let blurView = NSVisualEffectView(frame: superView.bounds)
     blurView.autoresizingMask = [.width, .height]
