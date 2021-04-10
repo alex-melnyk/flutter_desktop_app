@@ -8,7 +8,12 @@ class MainFlutterWindow: NSWindow {
     self.contentViewController = flutterViewController
     self.setFrame(windowFrame, display: true)
     RegisterGeneratedPlugins(registry: flutterViewController)
-    
+
+    // Hiding the window title bar
+    self.titleVisibility = NSWindow.TitleVisibility.hidden;
+    self.titlebarAppearsTransparent = true;
+    self.isMovableByWindowBackground = true;
+
     // Adding a NSVisualEffectView to act as a translucent background
     let contentView = contentViewController!.view;
     let superView = contentView.superview!;
