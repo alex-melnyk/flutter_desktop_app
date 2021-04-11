@@ -22,7 +22,7 @@ class SidebarScaffold extends StatelessWidget {
         children: [
           Container(
             width: 200,
-            child: Padding(
+            child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,
               ),
