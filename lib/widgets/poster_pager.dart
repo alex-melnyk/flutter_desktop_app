@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class PosterPager extends StatelessWidget {
   const PosterPager({Key key}) : super(key: key);
 
-  static const _colors = [
-    Colors.red,
-    Colors.green,
-    Colors.blue,
+  static final _images = [
+    AssetImage('assets/images/img_00.jpg'),
+    AssetImage('assets/images/img_01.jpg'),
+    AssetImage('assets/images/img_02.jpg'),
   ];
 
   @override
@@ -24,18 +24,21 @@ class PosterPager extends StatelessWidget {
         ),
         scrollDirection: Axis.horizontal,
         itemExtent: 680,
-        itemCount: _colors.length,
+        itemCount: _images.length,
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.symmetric(
               horizontal: 2.5,
             ),
             decoration: BoxDecoration(
-              color: _colors[index],
               border: Border.all(
                 color: theme.dividerColor,
                 width: 1,
               ),
+            ),
+            child: Image(
+              image: _images[index],
+              fit: BoxFit.cover,
             ),
           );
         },
